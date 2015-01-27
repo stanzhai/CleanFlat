@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     {{! Document Settings }}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,35 +8,40 @@
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
-
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
-
-    {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
-
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
-</head>
-<body class="{{body_class}}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand"><a href="/">{{meta_title}}</a></div>
+      <nav>
+        <ul>
+          <li class="active">
+            <a href="{{@blog.url}}">首页</a>
+            <ul>
+              <li><a href="/">sub</a></li>
+            </ul>
+          </li>
+          <li><a href="/">待定</a></li>
+        </ul>
+      </nav>
+    </header>
 
+    <div class="site-wrapper">
     {{! Everything else gets inserted here }}
     {{{body}}}
+    </div>
 
-    <footer class="site-footer clearfix">
-        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    <footer class="site-footer">
+      <p><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} | This theme is based on <a href="http://xingrz.me/">XiNGRZ's</a> work.</p>
+      <p>版权所有 文章转载需保留出处 京ICP备14020638号</p>
     </footer>
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
-
-    {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-
-</body>
+  </body>
 </html>

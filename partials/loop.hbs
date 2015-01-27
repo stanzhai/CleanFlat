@@ -5,21 +5,20 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="{{post_class}}">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+<article class="site-abstract">
+    <header>
+        <h1><a href="{{url}}">{{title}}</a></h1>
     </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        {{author}}
-        {{tags prefix=" on "}}
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+    <div class="abstract">
+    {{excerpt words="26"}}
+    </div>
+    <footer>
+        <time pubdate datetime="{{date format='YYYY-MM-DD'}}">{{date format='YYYY-MM-DD'}}</time>
+        {{tags separator=", "}}
     </footer>
 </article>
 {{/foreach}}
 
 {{! Previous/next page links - displayed on every page }}
 {{pagination}}
+
