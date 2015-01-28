@@ -45,7 +45,11 @@
       if (path != '/' && path[path.length - 1] == '/') {
         path = path.substring(0, path.length - 1);
       }
-      $('nav li a[href="' + path + '"]').parent().addClass('active');
+      var ele = $('nav li a[href="' + path + '"]');
+      if (ele.length == 0) {
+        ele = $('nav li a[href="/"]');
+      }
+      ele.parent().addClass('active');
     });
     </script>
   </body>
