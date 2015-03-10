@@ -4,7 +4,7 @@ html,body {
 }
 
 html {
-    font-family: "Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
+    font-family: "PingHei","Lucida Grande", "Lucida Sans Unicode", "STHeiti", "Helvetica","Arial","Verdana","sans-serif";
     font-size: 18px;
     -webkit-font-smoothing: antialiased;
     color: #556
